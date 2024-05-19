@@ -1,0 +1,65 @@
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Changed to min-height */
+    width: 100vw;
+    background: linear-gradient(135deg, white, rgb(0, 128, 255));
+    padding: 20px; /* Added padding to prevent content from touching the edges */
+    box-sizing: border-box; /* Ensures padding is included in the width/height */
+  }
+  
+  .form-container {
+    max-width: 400px;
+    width: 100%; /* Ensure the form takes the full width of its container */
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: white;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 1rem;
+    color: black;
+  }
+  
+  .form-field {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+  .form-input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: black;
+    outline: none;
+    box-shadow: 0 0 5px rgba(110, 59, 110, 0.5);
+  }
+  
+  .form-submit {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: rgb(0, 149, 255);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .form-submit:hover {
+    background: white;
+    color: rgb(0, 149, 255);
+  }
+  
+  .form-submit:active {
+    transform: scale(0.98);
+  }
+  

@@ -1,0 +1,10 @@
+.MYProfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, white, rgb(0, 128, 255)
+    );
+  }
+  

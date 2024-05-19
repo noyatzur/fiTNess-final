@@ -1,0 +1,51 @@
+.tips-page {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Change height to min-height to ensure background extends to bottom */
+    width: 100vw;
+    background: linear-gradient(135deg, white, rgb(0, 128, 255));
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.tips-container {
+    display: flex;
+    flex-direction: row; /* Change to row to display images side by side */
+    align-items: center;
+    justify-content: center; /* Center images horizontally */
+    margin-top: 20px;
+}
+
+.tip {
+    width: 250px;
+    margin-right: 20px; /* Add margin between images */
+}
+
+.tip:last-child {
+    margin-right: 0; /* Remove margin for the last image */
+}
+
+.tip img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tip img:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+}
+
+.tip p {
+    font-size: 14px;
+}
+
+.spiral-background {
+    background-repeat: repeat;
+}
