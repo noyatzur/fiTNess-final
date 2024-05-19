@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+
 import pic1 from '../SliderImg/pic1.jpg';
 import pic2 from '../SliderImg/pic2.jpg';
 import pic3 from '../SliderImg/pic3.jpg';
@@ -16,7 +15,6 @@ import pic5 from '../SliderImg/pic5.jpg';
 import HebrewLink from '../components/loginComp';
 import '../css/Home.css';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   { imgPath: pic1 },
@@ -26,7 +24,7 @@ const images = [
   { imgPath: pic5 },
 ];
 
-function SwipeableTextMobileStepper() {
+function Home() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
@@ -53,55 +51,11 @@ function SwipeableTextMobileStepper() {
 
   return (
     <>
-        <section className='imageCarousel'>
-            <Box className="page_container">
-                        <Box className="upper_container">
-                            <Typography variant="h4">?גם אתם רוצים לעשות שינוי</Typography>
-                            <Paper square elevation={0}>
-                            <Typography className="steeper_text">המפעל שלנו גאה להציג</Typography>
-                            </Paper>
-                            <AutoPlaySwipeableViews
-                            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                            index={activeStep}
-                            onChangeIndex={handleIndexChange}
-                            enableMouseEvents
-                            interval={2000} // Interval for auto play
-                            className="img_container"
-                            >
-                            {images.map((step, index) => (
-                                <div key={index} className={`image_wrapper ${activeStep === index ? 'active' : ''}`}>
-                                <img src={step.imgPath} alt={`Pic ${index + 1}`} />
-                                </div>
-                            ))}
-                            </AutoPlaySwipeableViews>
-                            <div className="mobile-stepper">
-                            <Button
-                                size="small"
-                                onClick={handleBack}
-                                disabled={activeStep === 0}
-                                className="stepper-button"
-                            >
-                                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-                                אחורה
-                            </Button>
-                            <Button
-                                size="small"
-                                onClick={handleNext}
-                                disabled={activeStep === maxSteps - 1}
-                                className="stepper-button"
-                            >
-                                הבא
-                                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-                            </Button>
-                            <HebrewLink text="טקסט בעברית" loginPage="./pages/Login" />
-                            </div>
-                        </Box>
-                        <Box className="lower-container">
-                            {/* Content for lower part */}
-                        </Box>
-            </Box>
-        </section>
+ 
         <section className='personalStory'>
+            <div className='font-bold underline'>
+                twrtsgsgsdsdf
+            </div>
 
         </section>
         <section className='recomendtionCustomers'>
@@ -116,4 +70,4 @@ function SwipeableTextMobileStepper() {
   );
 }
 
-export default SwipeableTextMobileStepper;
+export default Home;
