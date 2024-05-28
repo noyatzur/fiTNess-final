@@ -17,19 +17,44 @@ import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import LoginComp from '../components/loginComp';
 import ElevatorCounter from '../components/ElevatorCounter'; // Import ElevatorCounter component
+import ImageCarousel from '../components/ImageCarousel';
 
-const images = [
-  { imgPath: pic1 },
-  { imgPath: pic2 },
-  { imgPath: pic3 },
-  { imgPath: pic4 },
-  { imgPath: pic5 },
-];
+// const images = [
+//   { imgPath: pic1 },
+//   { imgPath: pic2 },
+//   { imgPath: pic3 },
+//   { imgPath: pic4 },
+//   { imgPath: pic5 },
+// ];
 
 function Home() {
   const theme = useTheme();
+
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => (prevActiveStep - 1 + maxSteps) % maxSteps);
+  };
+
+  const handleIndexChange = (index) => {
+    setActiveStep(index);
+  };
+
+  const images = [
+    pic1,
+    pic2,
+    pic3,
+    pic4,
+    pic5,
+    
+  ];
+
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
+
 
   return (
     <div className='body'>
@@ -57,15 +82,20 @@ function Home() {
         </div>
       </section>
       <section>
+
+      <LoginComp></LoginComp>
+      <ImageCarousel images={images}/>
+
         <LoginComp></LoginComp>
 
+
       </section>
-      <section className='recomendtionCustomers'>
+      {/* <section className='recomendtionCustomers'>
 
       </section>
       <section className='recomendToRegister'>
 
-      </section>
+      </section> */}
 
     </div>
 
