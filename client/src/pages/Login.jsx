@@ -71,7 +71,7 @@ const Login = () => {
                         {errors.email && <p className="error">{errors.email.message}</p>}
                     </FormControl>
 
-                    <FormControl sx={{ m: 1, width: '35ch' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '46ch' }} variant="outlined">
                         <InputLabel htmlFor="outlined-adornment-password">סיסמה</InputLabel>
                         <OutlinedInput
                             id="outlined-adornment-password"
@@ -94,7 +94,7 @@ const Login = () => {
                         {errors.password && <p className="error">{errors.password.message}</p>}
                     </FormControl>
 
-                    <FormControl sx={{ m: 1, width: '35ch' }} variant="outlined">
+                    <FormControl sx={{ m: 1, width: '46ch' }} variant="outlined">
                         <InputLabel htmlFor="outlined-adornment-confirm-password">אימות הסיסמה</InputLabel>
                         <OutlinedInput
                             id="outlined-adornment-confirm-password"

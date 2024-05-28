@@ -1,7 +1,11 @@
-.font-bold_underline {
+.body{
+  max-width: 100 vw;
   direction: rtl;
   background: linear-gradient(135deg, white, rgb(0, 128, 255)); /* Corrected background gradient syntax */
 }
+
+
+
 
 h1 {
   font-family: Georgia, 'Times New Roman', Times, serif;

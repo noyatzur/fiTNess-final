@@ -11,18 +11,16 @@ const ElevatorCounter = () => {
 
   const divStyle = {
     fontSize: '2em',
-    color: 'green',
+    color: 'black',
     textAlign: 'center',
     margin: '20px',
-    border: '2px solid green',
     padding: '10px',
-    width: '100px',
-    borderRadius: '10px',
+    borderRadius: '10px'
   };
 
   return (
     <animated.div style={divStyle}>
-      {count.to((val) => Math.floor(val))}
+     {count.to((val) => ` הצטרפו אלינו כ-${Math.floor(val)} לקוחות ששינו את חייהם`)}
     </animated.div>
   )
 }

@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh; /* Change height to min-height to ensure background extends to bottom */
-    width: 100vw;
+    max-width: 100vw;
     background: linear-gradient(135deg, white, rgb(0, 128, 255));
     background-attachment: fixed; /* Keep the background fixed while scrolling */
 }
