@@ -79,7 +79,6 @@ export default function Register2() {
             helperText="Enter your Thigh circumference"
             className="form-field"
           />
-          <button type="submit">Next</button>
         </Box>
       </form>
     </div>

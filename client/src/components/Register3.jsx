@@ -75,7 +75,6 @@ export default function Register3() {
             helperText="Enter your Wrist circumference"
             className="form-field"
           />
-          <button type="submit" className="form-submit">Submit</button>
         </Box>
       </form>
     </div>

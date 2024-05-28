@@ -1,24 +1,20 @@
-// HebrewLink.js
 import React from 'react';
+import { Link } from 'react-router-dom';
+import '../css/loginComp.css';
 
-class HebrewLink extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick(event) {
-        event.preventDefault();
-        window.location.href = this.props.loginPage;
-    }
-
-    render() {
-        return (
-            <div className="link-container">
-                <a href="./pages/Login" className="link" onClick={this.handleClick}>{this.props.text}</a>
+function LoginComp() {
+    return (
+        <div className="login-container">
+            <div className="login-bg-bars"></div>
+            <div className="login-content">
+                <Link to="Login" className="login-link">
+                    <button className="login1">
+                        <p className="login-text">התחבר כאן</p>
+                    </button>
+                </Link>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-export default HebrewLink;
+export default LoginComp;

@@ -9,9 +9,9 @@ import Register1 from '../components/Register1';
 import Register2 from '../components/Register2';
 import Register3 from '../components/Register3';
 
-const steps = ['Here we go', 'you doing greate', 'we are already finish'];//steps array
+const steps = ['Here we go', 'you doing great', 'we are already finish']; // steps array
 
-export default function HorizontalNonLinearStepper() {//show how is the completed step and with how we need to continue
+export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [completed, setCompleted] = React.useState({});
 
@@ -23,24 +23,21 @@ export default function HorizontalNonLinearStepper() {//show how is the complete
     return Object.keys(completed).length;
   };
 
-  const isLastStep = () => { //chack if we are inoue final step. the last one in the steps array
+  const isLastStep = () => {
     return activeStep === totalSteps() - 1;
   };
 
-  const allStepsCompleted = () => { //Shows us if we have finished the whole process -> finished with our all steps
+  const allStepsCompleted = () => {
     return completedSteps() === totalSteps();
   };
 
   const handleNext = () => {
     const newActiveStep =
       isLastStep() && !allStepsCompleted()
-        ? // It's the last step, but not all steps have been completed,
-          // find the first step that has been completed
-          steps.findIndex((step, i) => !(i in completed))
+        ? steps.findIndex((step, i) => !(i in completed))
         : activeStep + 1;
     setActiveStep(newActiveStep);
   };
-
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -63,7 +60,7 @@ export default function HorizontalNonLinearStepper() {//show how is the complete
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', marginTop: '105px', overflowX: 'scroll' }}>
       <Stepper nonLinear activeStep={activeStep}>
         {steps.map((label, index) => (
           <Step key={label} completed={completed[index]}>
@@ -86,13 +83,18 @@ export default function HorizontalNonLinearStepper() {//show how is the complete
           </React.Fragment>
         ) : (
           <React.Fragment>
-            {activeStep + 1 == 1 ? <Register1/> : activeStep + 1 == 2 ? <Register2/> : <Register3/> }
+            {activeStep + 1 == 1 ? (
+              <Register1 />
+            ) : activeStep + 1 == 2 ? (
+              <Register2 />
+            ) : (
+              <Register3 />
+            )}
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
               <Button
                 color="inherit"
                 disabled={activeStep === 0}
-                onClick={handleBack}              
-                
+                onClick={handleBack}
                 sx={{ mr: 1 }}
               >
                 Back
@@ -108,9 +110,7 @@ export default function HorizontalNonLinearStepper() {//show how is the complete
                   </Typography>
                 ) : (
                   <Button onClick={handleComplete}>
-                    {completedSteps() === totalSteps() - 1
-                      ? 'Finish'
-                      : 'Complete Step'}
+                    {completedSteps() === totalSteps() - 1 ? 'Finish' : 'Complete Step'}
                   </Button>
                 ))}
             </Box>
