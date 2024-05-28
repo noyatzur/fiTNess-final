@@ -17,46 +17,18 @@ import '../css/Home.css';
 import { Link } from 'react-router-dom'; 
 import LoginComp from '../components/loginComp';
 import ElevatorCounter from '../components/ElevatorCounter'; // Import ElevatorCounter component
+import ImageCarousel from '../components/ImageCarousel';
 
-const images = [
-  { imgPath: pic1 },
-  { imgPath: pic2 },
-  { imgPath: pic3 },
-  { imgPath: pic4 },
-  { imgPath: pic5 },
-];
+// const images = [
+//   { imgPath: pic1 },
+//   { imgPath: pic2 },
+//   { imgPath: pic3 },
+//   { imgPath: pic4 },
+//   { imgPath: pic5 },
+// ];
 
 function Home() {
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
-
-  // State for customer count
-  const [customerCount, setCustomerCount] = useState(1); // Start from 1
-
-  React.useEffect(() => {
-    let startTime = Date.now(); // Get the current time
-    const duration = 2000; // Total duration in milliseconds (7 seconds)
-    const startCount = 1; // Starting count
-    const endCount = 100; // Ending count 
-    const increment = Math.ceil((endCount - startCount) / (duration / 1000)); // Calculate increment per second
-
-    const interval = setInterval(() => {
-      const currentTime = Date.now(); // Get current time
-      const elapsedTime = currentTime - startTime; // Calculate elapsed time
-      const currentCount = startCount + Math.floor(elapsedTime / 1000) * increment; // Calculate current count
-
-      if (currentCount >= endCount) {
-        // If current count exceeds or equals the end count, stop the interval
-        clearInterval(interval);
-        setCustomerCount(endCount); // Set the final count
-      } else {
-        setCustomerCount(currentCount); // Update the count
-      }
-    }, 100); // Update every 100 milliseconds
-
-    return () => clearInterval(interval); // Clean up function
-  }, []); // Run only once on component mount
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => (prevActiveStep + 1) % maxSteps);
@@ -69,6 +41,15 @@ function Home() {
   const handleIndexChange = (index) => {
     setActiveStep(index);
   };
+
+  const images = [
+    pic1,
+    pic2,
+    pic3,
+    pic4,
+    pic5,
+    
+  ];
 
   return (
     <>
@@ -97,14 +78,15 @@ function Home() {
       </section>
       <section>
       <LoginComp></LoginComp>
+      <ImageCarousel images={images}/>
 
       </section>
-      <section className='recomendtionCustomers'>
+      {/* <section className='recomendtionCustomers'>
 
       </section>
       <section className='recomendToRegister'>
 
-      </section>
+      </section> */}
 
     </>
 
