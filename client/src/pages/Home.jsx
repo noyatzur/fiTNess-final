@@ -72,7 +72,7 @@ function Home() {
 
   return (
     <>
-      <ElevatorCounter count={customerCount} /> {/* Display ElevatorCounter component with customer count */}
+      <ElevatorCounter/> {/* Display ElevatorCounter component with customer count */}
       <section className='personalStory'>
         <div className='font-bold_underline'>
           <h1>

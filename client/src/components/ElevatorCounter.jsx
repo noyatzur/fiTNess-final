@@ -1,23 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import '../css/ElevatorCounter.css'; // Import CSS for styling
+import React from 'react'
+import { useSpring, animated } from '@react-spring/web'
 
-const ElevatorCounter = ({ count }) => {
-  const [currentCount, setCurrentCount] = useState(0);
+const ElevatorCounter = () => {
 
-  // useEffect to update the counter when the count prop changes
-  useEffect(() => {
-    setCurrentCount(0); // Reset the counter
-    const timer = setTimeout(() => {
-      setCurrentCount(count);
-    }, 1000); // Delay for smoother animation
-    return () => clearTimeout(timer);
-  }, [count]);
+  const { count } = useSpring({
+    from: { count: 0 },
+    to: { count: 100 },
+    config: { duration: 3000 }, // Animation duration
+  });
+
+  const divStyle = {
+    fontSize: '2em',
+    color: 'green',
+    textAlign: 'center',
+    margin: '20px',
+    border: '2px solid green',
+    padding: '10px',
+    width: '100px',
+    borderRadius: '10px',
+  };
 
   return (
-    <div className="elevator-counter">
-      <div className="counter-value">{currentCount}</div>
-    </div>
-  );
-};
+    <animated.div style={divStyle}>
+      {count.to((val) => Math.floor(val))}
+    </animated.div>
+  )
+}
 
-export default ElevatorCounter;
+export default ElevatorCounter
