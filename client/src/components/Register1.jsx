@@ -69,7 +69,6 @@ export default function Register1() {
               <FormControlLabel value="male" control={<Radio />} label="Male" />
             </RadioGroup>
           </FormControl>
-          <button type="submit">Next</button>
         </Box>
       </form>
     </div>

@@ -1,0 +1,25 @@
+.elevator-counter {
+    font-size: 2em;
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .counter-value {
+    animation: counter-animation 2s forwards;
+  }
+  
+  @keyframes counter-animation {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
